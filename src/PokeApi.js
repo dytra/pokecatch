@@ -22,9 +22,14 @@ const PokeApi = {
     return Promise.all(pokemons);
   },
   getPokemonInfo: async pokemonName => {
-    const pokemonInfo = await fetch(pokemonURL + pokemonName).then(res =>
-      res.json()
-    );
+    let pokemonInfo = null;
+    try {
+      pokemonInfo = await fetch(pokemonURL + pokemonName).then(res =>
+        res.json()
+      );
+    } catch (e) {
+      pokemonInfo = {};
+    }
     return pokemonInfo;
   },
   catchPokemon: () => {
