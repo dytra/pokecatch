@@ -1,9 +1,10 @@
 import React from "react";
 
-const Header = () => {
+const Header = ({ selectedPokemon }) => {
+  const headerTitle = selectedPokemon.name ? selectedPokemon.name : "Pokédex";
   return (
     <header>
-      <h1>Pokédex</h1>
+      <h1>{headerTitle}</h1>
     </header>
   );
 };

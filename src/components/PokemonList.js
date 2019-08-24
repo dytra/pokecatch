@@ -1,9 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 const PokemonList = ({ pokemons, setPage, setSelectedPokemon }) => {
   const handleClick = e => {
     setPage("PokemonDetail");
   };
+
+  useEffect(() => {
+    setSelectedPokemon({});
+  }, [setSelectedPokemon]);
 
   return (
     <ul>

@@ -28,7 +28,7 @@ const App = () => {
   return (
     <div className="App">
       <Router>
-        <Header />
+        <Header selectedPokemon={selectedPokemon} />
         <Main
           currentPage={page}
           setPage={setPage}
