@@ -2,7 +2,7 @@ import React from "react";
 import { withRouter } from "react-router-dom";
 
 function Header({ selectedPokemon, page, history, catchedPokemon }) {
-  console.log(history.length);
+  // console.log(history.length);
   const backButtonVisible = history.length < 1 ? "vis-hidden" : "";
 
   // backButtonVisible();
@@ -16,6 +16,7 @@ function Header({ selectedPokemon, page, history, catchedPokemon }) {
     } else if (page === "MyPokemon") {
       title = "My Pokemon";
     } else {
+      console.log("pokecatch because " + page);
       title = "Pokécatch";
     }
     return title;

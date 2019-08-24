@@ -13,12 +13,6 @@ function Main({
   catchedPokemon,
   setPage
 }) {
-  const pages = {
-    PokemonList: PokemonList,
-    MyPokemon: MyPokemon,
-    PokemonDetail: PokemonDetail
-  };
-  const CurrentPage = pages[currentPage];
   return (
     <div className="main">
       <Route

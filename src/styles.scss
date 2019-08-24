@@ -30,6 +30,7 @@ header {
     color:skyblue;
     font-weight: 100;
     padding: 1em;
+    // padding-right:1em;
     &:active {
       background:lightgray;
 
@@ -46,9 +47,11 @@ header {
 }
 header h1 {
   // flex-basis:70%;
+  margin-left:-2em;
   font-size: 1rem;
   text-align:center;
   padding: 1em 0;
+  justify-self:center;
 }
 
 .main {

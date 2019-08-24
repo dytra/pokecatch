@@ -33,6 +33,7 @@ const App = () => {
           selectedPokemon={selectedPokemon}
           catchedPokemon={catchedPokemon}
           pokemons={pokemons}
+          page={page}
         />
         <Main
           currentPage={page}

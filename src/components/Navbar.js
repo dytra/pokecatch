@@ -1,9 +1,8 @@
 import React from "react";
-import PokemonList from "./PokemonList";
-import MyPokemon from "./MyPokemon";
 import { Link } from "react-router-dom";
 const Navbar = ({ setPage, catchedPokemon }) => {
   const handleClick = e => {
+    console.log("setting page " + e.target.name);
     setPage(e.target.name);
   };
   return (
