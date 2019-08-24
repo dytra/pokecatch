@@ -1,2 +1,0 @@
-# pokecatch
-Created with CodeSandbox

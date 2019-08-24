@@ -1,0 +1,96 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  // overflow-y: hidden;
+}
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+header {
+  border-bottom: 1px solid lightgrey;
+  padding: 1em 0;
+  position:fixed;
+  background:white;
+  width:100%;
+  // opacity:.9;
+  top:0;
+}
+header h1 {
+  font-size: 1rem;
+}
+
+.main {
+  height:100%;
+  overflow-y:scroll;
+  margin-top:3.5em;
+  margin-bottom:3.5em;
+  // margin: 30px auto 0;
+  // background:pink;
+  
+}
+
+.navbar {
+  
+  border-top: 1px solid lightgrey;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  box-sizing: border-box;
+  padding-bottom: 1em;
+  padding-top: 1em;
+  background:white;
+  
+}
+
+
+.navbar button {
+  background: none;
+  border: none;
+  padding-right: 0.5em;
+  outline: none;
+}
+
+a.pokemon {
+  text-decoration: none;
+  color:black;
+  font-weight: 100;
+}
+
+li.pokemon {
+  /* background:yellow; */
+  display:flex;
+  text-align:left;
+  padding-left:.5em;
+  // background:pink;
+  // padding-bottom:1em;
+  text-decoration:none !important;
+  border-bottom:1px solid lightgrey;
+  // color:darkgrey;
+  cursor:default;
+  img {
+    width:50px;
+    height:50px;
+    pointer-events: none;
+  }
+  &:active {
+    background:lightgrey;
+  }  
+  span {
+    vertical-align: middle;
+    // background:pink;
+    padding-top:1em;
+    padding-left:.5em;
+    pointer-events: none;
+  }
+}
+
+
+body::-webkit-scrollbar {
+  width: 0px;  /* Remove scrollbar space */
+  background: transparent;  /* Optional: just make scrollbar invisible */
+}
