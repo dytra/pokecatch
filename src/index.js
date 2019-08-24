@@ -29,7 +29,11 @@ const App = () => {
   return (
     <div className="App">
       <Router>
-        <Header selectedPokemon={selectedPokemon} />
+        <Header
+          selectedPokemon={selectedPokemon}
+          catchedPokemon={catchedPokemon}
+          pokemons={pokemons}
+        />
         <Main
           currentPage={page}
           setPage={setPage}
@@ -38,6 +42,7 @@ const App = () => {
           selectedPokemon={selectedPokemon}
           setSelectedPokemon={setSelectedPokemon}
           setCatchedPokemon={setCatchedPokemon}
+          setPokemons={setPokemons}
         />
         <Navbar setPage={setPage} catchedPokemon={catchedPokemon} />
       </Router>

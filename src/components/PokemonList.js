@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 const PokemonList = ({ pokemons, setPage, setSelectedPokemon }) => {
   useEffect(() => {
     setSelectedPokemon({});
-    setPage("PokemonList");
   }, [setSelectedPokemon, setPage]);
 
   return (
@@ -14,6 +13,7 @@ const PokemonList = ({ pokemons, setPage, setSelectedPokemon }) => {
             key={pokemon.name}
             to={`/detail/${pokemon.name}`}
             className="pokemon"
+            onClick={() => setPage("PokemonDetail")}
           >
             <li
               className="pokemon"

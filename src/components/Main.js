@@ -9,6 +9,7 @@ function Main({
   setSelectedPokemon,
   setCatchedPokemon,
   pokemons,
+  setPokemons,
   catchedPokemon,
   setPage
 }) {
@@ -23,12 +24,13 @@ function Main({
       <Route
         exact
         path="/"
-        render={() => (
+        render={params => (
           <PokemonList
             setPage={setPage}
             selectedPokemon={selectedPokemon}
             pokemons={pokemons}
             setSelectedPokemon={setSelectedPokemon}
+            params={params}
           />
         )}
       />
@@ -43,6 +45,7 @@ function Main({
             setSelectedPokemon={setSelectedPokemon}
             setCatchedPokemon={setCatchedPokemon}
             params={params}
+            setPokemons={setPokemons}
           />
         )}
       />

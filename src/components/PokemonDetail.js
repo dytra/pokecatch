@@ -7,6 +7,7 @@ const PokemonDetail = ({
   setCatchedPokemon,
   catchedPokemon,
   setPage,
+  setPokemons,
   params
 }) => {
   const pokemonName = params.match.params.pname;
@@ -70,6 +71,7 @@ const PokemonDetail = ({
     const disable = found.length !== 0 ? "disabled" : "";
     return disable;
   };
+
   return (
     <div>
       <img src={selectedPokemon.image} alt={selectedPokemon.name} />

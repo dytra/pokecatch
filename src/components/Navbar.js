@@ -13,7 +13,7 @@ const Navbar = ({ setPage, catchedPokemon }) => {
           ListPokemon
         </button>
       </Link>
-      <button className="pokemon-logo">{catchedPokemon.length}</button>
+
       <Link to="/my">
         <button name="MyPokemon" onClick={handleClick}>
           MyPokemon
