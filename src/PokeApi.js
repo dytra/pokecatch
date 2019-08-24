@@ -30,6 +30,9 @@ const PokeApi = {
   catchPokemon: () => {
     const chance = Math.random() > 0.5;
     return chance;
+  },
+  helloWorld: () => {
+    return "Hello, World!";
   }
 };
 
