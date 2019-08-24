@@ -26,6 +26,10 @@ const PokeApi = {
       res.json()
     );
     return pokemonInfo;
+  },
+  catchPokemon: () => {
+    const chance = Math.random() > 0.5;
+    return chance;
   }
 };
 

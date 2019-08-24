@@ -1,12 +1,20 @@
 import React, { useEffect } from "react";
 import PokeApi from "../PokeApi";
 
-const PokemonDetail = ({ selectedPokemon, setSelectedPokemon, params }) => {
+const PokemonDetail = ({
+  selectedPokemon,
+  setSelectedPokemon,
+  setCatchedPokemon,
+  catchedPokemon,
+  setPage,
+  params
+}) => {
   const pokemonName = params.match.params.pname;
   // console.log("pname iss", pokemonName);
   // console.log("selected pokemon iss", selectedPokemon);
   useEffect(
     e => {
+      setPage("PokemonDetail");
       PokeApi.getPokemonInfo(pokemonName).then(pokemonInfo => {
         setSelectedPokemon({
           name: pokemonName,
@@ -16,7 +24,7 @@ const PokemonDetail = ({ selectedPokemon, setSelectedPokemon, params }) => {
         });
       });
     },
-    [setSelectedPokemon, pokemonName]
+    [setSelectedPokemon, pokemonName, setPage]
   );
 
   const pokemonTypeList = () => {
@@ -43,8 +51,24 @@ const PokemonDetail = ({ selectedPokemon, setSelectedPokemon, params }) => {
     return ret;
   };
 
-  const handleClick = () => {
-    console.log("catching pokemon");
+  const handleClickCatchPokemon = () => {
+    const chance = PokeApi.catchPokemon();
+    if (chance) {
+      console.log("Pokemon catched!");
+      setCatchedPokemon([...catchedPokemon, selectedPokemon]);
+    } else {
+      console.log("Failed to catch pokemon :(");
+    }
+  };
+
+  const disableCatchButton = () => {
+    //disable button if already catched
+
+    const found = catchedPokemon.filter(pokemon => {
+      return pokemon.name === selectedPokemon.name;
+    });
+    const disable = found.length !== 0 ? "disabled" : "";
+    return disable;
   };
   return (
     <div>
@@ -52,7 +76,11 @@ const PokemonDetail = ({ selectedPokemon, setSelectedPokemon, params }) => {
       <span>{selectedPokemon.name}</span>
       {pokemonTypeList()}
       {pokemonMoveList()}
-      <button id="catch" onClick={handleClick}>
+      <button
+        id="catch"
+        onClick={handleClickCatchPokemon}
+        disabled={disableCatchButton()}
+      >
         Catch
       </button>
     </div>

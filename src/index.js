@@ -24,7 +24,8 @@ const App = () => {
     };
     fetchPokemon();
   }, []);
-  const [totalPokemon, setTotalPokemon] = useState(3);
+  const [catchedPokemon, setCatchedPokemon] = useState([]);
+
   return (
     <div className="App">
       <Router>
@@ -33,10 +34,12 @@ const App = () => {
           currentPage={page}
           setPage={setPage}
           pokemons={pokemons}
+          catchedPokemon={catchedPokemon}
           selectedPokemon={selectedPokemon}
           setSelectedPokemon={setSelectedPokemon}
+          setCatchedPokemon={setCatchedPokemon}
         />
-        <Navbar setPage={setPage} totalPokemon={totalPokemon} />
+        <Navbar setPage={setPage} catchedPokemon={catchedPokemon} />
       </Router>
     </div>
   );

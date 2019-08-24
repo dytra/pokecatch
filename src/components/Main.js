@@ -7,7 +7,9 @@ function Main({
   currentPage,
   selectedPokemon,
   setSelectedPokemon,
+  setCatchedPokemon,
   pokemons,
+  catchedPokemon,
   setPage
 }) {
   const pages = {
@@ -37,11 +39,27 @@ function Main({
             setPage={setPage}
             selectedPokemon={selectedPokemon}
             pokemons={pokemons}
+            catchedPokemon={catchedPokemon}
             setSelectedPokemon={setSelectedPokemon}
+            setCatchedPokemon={setCatchedPokemon}
             params={params}
           />
         )}
       />
+
+      <Route
+        exact
+        path="/my"
+        render={() => (
+          <PokemonList
+            setPage={setPage}
+            selectedPokemon={selectedPokemon}
+            pokemons={catchedPokemon}
+            setSelectedPokemon={setSelectedPokemon}
+          />
+        )}
+      />
+
       {/* <CurrentPage
         setPage={setPage}
         selectedPokemon={selectedPokemon}

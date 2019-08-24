@@ -2,7 +2,7 @@ import React from "react";
 import PokemonList from "./PokemonList";
 import MyPokemon from "./MyPokemon";
 import { Link } from "react-router-dom";
-const Navbar = ({ setPage, totalPokemon }) => {
+const Navbar = ({ setPage, catchedPokemon }) => {
   const handleClick = e => {
     setPage(e.target.name);
   };
@@ -13,10 +13,12 @@ const Navbar = ({ setPage, totalPokemon }) => {
           ListPokemon
         </button>
       </Link>
-      <button className="pokemon-logo">{totalPokemon}</button>
-      <button name="MyPokemon" onClick={handleClick}>
-        MyPokemon
-      </button>
+      <button className="pokemon-logo">{catchedPokemon.length}</button>
+      <Link to="/my">
+        <button name="MyPokemon" onClick={handleClick}>
+          MyPokemon
+        </button>
+      </Link>
     </div>
   );
 };
